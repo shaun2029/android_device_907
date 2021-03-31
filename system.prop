@@ -1,0 +1,50 @@
+ro.sf.lcd_density=160
+
+persist.sys.timezone=Europe/London
+persist.sys.language=en
+persist.sys.country=GB
+
+# CM 11 bootloop fix
+ro.zygote.disable_gl_preload=1
+ro.bq.gpu_to_cpu_unsupported=1
+sys.disable_ext_animation=1
+debug.hwui.render_dirty_regions=false
+
+wifi.interface=wlan0
+wifi.supplicant_scan_interval=60
+
+# Disable StrictMode
+persist.sys.strictmode.visual=0
+persist.sys.strictmode.disable=1
+
+#Default USB Config (Do not change this)
+persist.sys.usb.config=mass_storage,adb
+# Enable\Diasble surface dithering. May improve visual quality
+persist.sys.use_dithering=0
+# Purge unused assets. May free more memory
+persist.sys.purgeable_assets=1
+# Improve Scrolling Responsiveness
+windowsmgr.max_events_per_sec=240
+# Minimum fling velocityis measured by the number of pixels
+view.minimum_fling_velocity=25
+# Touch responsiveness
+view.touch_slop=2
+
+# Allwiner blob
+ro.sys.bootfast=true
+ro.display.switch=1
+ro.property.tabletUI=false
+ro.product.firmware=v2.0
+ro.property.fontScale=1.15
+
+# RIL config
+rild.libpath=/system/lib/libsoftwinner-ril.so
+rild.libargs=-d /dev/ttyUSB2
+
+# Hardware info
+ro.device.cpu=AllWinner A10
+ro.device.gpu=ARM Mali 400MP
+ro.device.rear_cam=2 MP
+ro.device.front_cam=0.3 MP
+ro.device.screen_res=1024x768
+ro.chip_type=a10

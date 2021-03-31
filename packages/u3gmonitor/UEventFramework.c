@@ -122,7 +122,7 @@ int uevent_next_event(uevent_cb cb)
     	
         nr = poll(&fds, 1, -1);
      	     	
-        if(nr > 0 && fds.revents == POLLIN) 
+        if(nr > 0 && ((fds.revents & POLLIN) == POLLIN)) 
         {
             memset(buffer, 0, UEVENT_MSG_LEN+2);
             count = recv(fd, buffer, UEVENT_MSG_LEN+2, 0);

@@ -14,5 +14,10 @@
 # limitations under the License.
 #
 
+add_lunch_combo full_907-eng
 add_lunch_combo full_907-userdebug
+add_lunch_combo cm_907-eng
 add_lunch_combo cm_907-userdebug
+if [[ "$APPLY_PATCHES_907" -eq 1 ]]; then
+    sh device/softwinner/907/patches/apply.sh
+fi

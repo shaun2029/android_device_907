@@ -13,12 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+# Inherit device configuration
 $(call inherit-product, device/softwinner/907/full_907.mk)
-
-# Inherit some common CM9 stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, device/softwinner/907/907-blobs.mk)
+
+# Inherit some common CyanogenMod stuff.
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+
+# Inherit GSM common stuff
+$(call inherit-product, vendor/cm/config/gsm.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := cm_907
@@ -27,4 +30,12 @@ PRODUCT_DEVICE := 907
 PRODUCT_MODEL := Nexus 7
 PRODUCT_MANUFACTURER := Asus
 PRODUCT_RELEASE_NAME := 907
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi TARGET_DEVICE=grouper BUILD_FINGERPRINT="google/nakasi/grouper:4.1.1/JRO03D/402395:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.1.1 JRO03D 402395 release-keys"
+
+UTC_DATE := $(shell date +%s)
+DATE     := $(shell date +%Y%m%d)
+
+#Set build fingerprint / ID / Product Name ect.
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi TARGET_DEVICE=grouper BUILD_FINGERPRINT="google/nakasi/grouper:4.4.2/KOT49H/402395:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.4.2 KOT49H 402395 release-keys"
+
+# Allow ADB (to access dev settings)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=0 ro.secure=0 ro.allow.mock.location=1 service.adb.enable=1 persist.sys.usb.config=mass_storage ro.debuggable=1 persist.service.adb.enable=1 rild.libpath=/system/lib/libsoftwinner-ril.so

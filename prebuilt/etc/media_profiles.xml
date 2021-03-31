@@ -77,10 +77,10 @@
 -->
 <MediaSettings>
   <!-- Each camcorder profile defines a set of predefined configuration parameters -->
-  <!-- Back Camera -->
+  <!-- Front Camera -->
   <CamcorderProfiles cameraId="0">
 
-    <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+    <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="1000000"
              width="640"
@@ -93,41 +93,15 @@
              channels="1" />
     </EncoderProfile>
 
-    <EncoderProfile quality="high" fileFormat="mp4" duration="30">
+    <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="3000000"
-             width="1280"
-             height="720"
-             frameRate="15" />
-
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="44100"
-             channels="1" />
-    </EncoderProfile>
-    
-    <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="1000000"
              width="640"
              height="480"
-             frameRate="30" />
+             frameRate="15" />
 
       <Audio codec="aac"
              bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="3000000"
-             width="1280"
-             height="720"
-             frameRate="15" />
-
-      <Audio codec="aac"
-             bitRate="96000"
              sampleRate="44100"
              channels="1" />
     </EncoderProfile>
@@ -136,17 +110,19 @@
     <ImageEncoding quality="80" />
     <ImageEncoding quality="70" />
     <ImageDecoding memCap="20000000" />
+    
+    <Camera previewFrameRate="0" />
 
   </CamcorderProfiles>
 
-  <!-- Front Camera -->
+  <!-- Back Camera -->
   <CamcorderProfiles cameraId="1">
 
-       <EncoderProfile quality="high" fileFormat="mp4" duration="60">
+       <EncoderProfile quality="720p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="1000000"
-                   width="640"
-                   height="480"
+                   width="1280"
+                   height="720"
                    frameRate="30" />
 
             <Audio codec="aac"
@@ -155,11 +131,11 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+        <EncoderProfile quality="480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="300000"
-                   width="320"
-                   height="240"
+                   width="640"
+                   height="480"
                    frameRate="30" />
 
             <Audio codec="aac"
@@ -169,12 +145,12 @@
 
         </EncoderProfile>
         
-        <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="60">
+        <EncoderProfile quality="timelapse720p" fileFormat="mp4" duration="60">
             <Video codec="h264"
                    bitRate="1000000"
-                   width="640"
-                   height="480"
-                   frameRate="30" />
+                   width="1280"
+                   height="720"
+                   frameRate="15" />
 
             <Audio codec="aac"
                    bitRate="12200"
@@ -182,12 +158,12 @@
                    channels="1" />
         </EncoderProfile>
 
-        <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
+        <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
             <Video codec="h264"
                    bitRate="300000"
-                   width="320"
-                   height="240"
-                   frameRate="30" />
+                   width="640"
+                   height="480"
+                   frameRate="15" />
 
             <Audio codec="aac"
                    bitRate="12200"
@@ -200,8 +176,8 @@
     <ImageEncoding quality="80" />
     <ImageEncoding quality="70" />
     <ImageDecoding memCap="20000000" />
-
-        <Camera previewFrameRate="0" />
+    
+    <Camera previewFrameRate="0" />
 
     </CamcorderProfiles>
 
